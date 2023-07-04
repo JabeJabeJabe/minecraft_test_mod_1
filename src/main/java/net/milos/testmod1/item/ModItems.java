@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, TestMod1.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, TestMod1.MOD_ID); //
 
 
     public static final RegistryObject<Item> GUMMO = ITEMS.register("gummo",
