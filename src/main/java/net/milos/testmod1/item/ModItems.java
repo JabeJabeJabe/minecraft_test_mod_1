@@ -14,10 +14,10 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> GUMMO = ITEMS.register("gummo",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB)));
 
     public static final RegistryObject<Item> RAW_GUMMO = ITEMS.register("raw_gummo",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
