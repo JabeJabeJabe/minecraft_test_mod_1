@@ -1,0 +1,8 @@
+{
+  "replace": "false",
+  "values": [
+    "testmod1:gummo_block",
+    "testmod1:gummo_ore",
+    "testmod1:deepslate_gummo_ore"
+  ]
+}

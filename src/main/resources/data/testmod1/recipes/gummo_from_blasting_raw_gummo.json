@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "gummo",
+  "ingredient": {
+    "item": "testmod1:raw_gummo"
+  },
+  "result": "testmod1:gummo"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item" : "testmod1:gummo_block"
+    }
+  ],
+  "result": {
+    "item": "testmod1:gummo",
+    "count": 9
+  }
+}

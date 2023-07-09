@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "testmod1:gummo"
+    }
+  },
+  "result": {
+    "item": "testmod1:gummo_block"
+  }
+}
