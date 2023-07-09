@@ -2,5 +2,10 @@
   "item.testmod1.gummo": "Gummo",
   "item.testmod1.raw_gummo": "Raw gummo",
 
+  "block.testmod1.gummo_block": "Block of Gummo",
+  "block.testmod1.gummo_ore": "Gummo Ore",
+  "block.testmod1.deepslate_gummo_ore": "Deepslate Gummo Ore",
+
+
   "itemGroup.testmod1tab": "Test Mod 1"
 }

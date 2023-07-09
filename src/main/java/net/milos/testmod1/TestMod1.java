@@ -1,6 +1,7 @@
 package net.milos.testmod1;
 
 import com.mojang.logging.LogUtils;
+import net.milos.testmod1.block.ModBlocks;
 import net.milos.testmod1.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -22,6 +23,7 @@ public class TestMod1 {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
