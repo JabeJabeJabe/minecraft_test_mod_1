@@ -37,6 +37,10 @@ public class ModBlocks {
 
 
 
+    public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT)
+                    .strength(1f)), ModCreativeModeTab.TESTMOD1_TAB);
+
 
 
 
