@@ -1,6 +1,7 @@
 package net.milos.testmod1.block;
 
 import net.milos.testmod1.TestMod1;
+import net.milos.testmod1.block.custom.JumpyBlock;
 import net.milos.testmod1.item.ModCreativeModeTab;
 import net.milos.testmod1.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -38,7 +39,7 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT)
+            () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.DIRT)
                     .strength(1f)), ModCreativeModeTab.TESTMOD1_TAB);
 
 
