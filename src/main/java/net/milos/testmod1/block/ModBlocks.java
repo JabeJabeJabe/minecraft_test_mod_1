@@ -1,6 +1,7 @@
 package net.milos.testmod1.block;
 
 import net.milos.testmod1.TestMod1;
+import net.milos.testmod1.block.custom.GummoLampBlock;
 import net.milos.testmod1.block.custom.JumpyBlock;
 import net.milos.testmod1.item.ModCreativeModeTab;
 import net.milos.testmod1.item.ModItems;
@@ -37,10 +38,14 @@ public class ModBlocks {
                     UniformInt.of(3, 7)), ModCreativeModeTab.TESTMOD1_TAB);
 
 
-
     public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
             () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.DIRT)
-                    .strength(1f)), ModCreativeModeTab.TESTMOD1_TAB);
+                    .strength(1f).requiresCorrectToolForDrops()), ModCreativeModeTab.TESTMOD1_TAB);
+
+public static final RegistryObject<Block> GUMMO_LAMP = registerBlock("gummo_lamp",
+            () -> new GummoLampBlock(BlockBehaviour.Properties.of(Material.GLASS)
+                    .strength(1f).requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(GummoLampBlock.LIT) ? 15 : 0)), ModCreativeModeTab.TESTMOD1_TAB);
 
 
 
