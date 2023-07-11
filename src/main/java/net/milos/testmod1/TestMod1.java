@@ -3,6 +3,8 @@ package net.milos.testmod1;
 import com.mojang.logging.LogUtils;
 import net.milos.testmod1.block.ModBlocks;
 import net.milos.testmod1.item.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -40,6 +42,7 @@ public class TestMod1 {
     public static class ClientModEvents    {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)        {
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.GUMMOBERRY_CROP.get(), RenderType.cutout());
 
         }
     }

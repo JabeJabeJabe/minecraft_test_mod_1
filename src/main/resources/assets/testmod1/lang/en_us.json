@@ -2,12 +2,15 @@
   "item.testmod1.gummo": "Gummo",
   "item.testmod1.raw_gummo": "Raw gummo",
   "item.testmod1.sixty_nine_ball": "Sixty Nine Ball",
+  "item.testmod1.gummoberry": "Gummoberry",
+  "item.testmod1.gummoberry_seeds": "Gummoberry Seeds",
 
   "block.testmod1.gummo_block": "Block of Gummo",
   "block.testmod1.gummo_ore": "Gummo Ore",
   "block.testmod1.deepslate_gummo_ore": "Deepslate Gummo Ore",
   "block.testmod1.jumpy_block": "Jumpy Block",
   "block.testmod1.gummo_lamp": "Gummo Lamp",
+  "block.testmod1.gummoberry_crop": "Gummoberry Crop",
 
 
   "itemGroup.testmod1tab": "Test Mod 1"

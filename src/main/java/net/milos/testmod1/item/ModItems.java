@@ -1,9 +1,12 @@
 package net.milos.testmod1.item;
 
 import net.milos.testmod1.TestMod1;
+import net.milos.testmod1.block.ModBlocks;
 import net.milos.testmod1.item.custom.SixtyNineBallItem;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,6 +25,13 @@ public class ModItems {
 
     public static final RegistryObject<Item> SIXTY_NINE_BALL = ITEMS.register("sixty_nine_ball",
             () -> new SixtyNineBallItem(new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB).stacksTo(1)));
+
+public static final RegistryObject<Item> GUMMOBERRY_SEEDS = ITEMS.register("gummoberry_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.GUMMOBERRY_CROP.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB)));
+public static final RegistryObject<Item> GUMMOBERRY = ITEMS.register("gummoberry",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB)
+                    .food(new FoodProperties.Builder().nutrition(3).saturationMod(3f).build())));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

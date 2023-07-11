@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "age=0": {"model": "testmod1:block/gummoberry_stage0"},
+    "age=1": {"model": "testmod1:block/gummoberry_stage1"},
+    "age=2": {"model": "testmod1:block/gummoberry_stage2"},
+    "age=3": {"model": "testmod1:block/gummoberry_stage3"},
+    "age=4": {"model": "testmod1:block/gummoberry_stage4"},
+    "age=5": {"model": "testmod1:block/gummoberry_stage5"},
+    "age=6": {"model": "testmod1:block/gummoberry_stage6"}
+  }
+}

@@ -1,6 +1,7 @@
 package net.milos.testmod1.block;
 
 import net.milos.testmod1.TestMod1;
+import net.milos.testmod1.block.custom.GummoBerryCropBlock;
 import net.milos.testmod1.block.custom.GummoLampBlock;
 import net.milos.testmod1.block.custom.JumpyBlock;
 import net.milos.testmod1.item.ModCreativeModeTab;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -42,10 +44,13 @@ public class ModBlocks {
             () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.DIRT)
                     .strength(1f).requiresCorrectToolForDrops()), ModCreativeModeTab.TESTMOD1_TAB);
 
-public static final RegistryObject<Block> GUMMO_LAMP = registerBlock("gummo_lamp",
+    public static final RegistryObject<Block> GUMMO_LAMP = registerBlock("gummo_lamp",
             () -> new GummoLampBlock(BlockBehaviour.Properties.of(Material.GLASS)
                     .strength(1f).requiresCorrectToolForDrops()
                     .lightLevel(state -> state.getValue(GummoLampBlock.LIT) ? 15 : 0)), ModCreativeModeTab.TESTMOD1_TAB);
+
+    public static final RegistryObject<Block> GUMMOBERRY_CROP = BLOCKS.register("gummoberry_crop",
+            () -> new GummoBerryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
 
 
