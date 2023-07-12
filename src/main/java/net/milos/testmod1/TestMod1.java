@@ -3,6 +3,7 @@ package net.milos.testmod1;
 import com.mojang.logging.LogUtils;
 import net.milos.testmod1.block.ModBlocks;
 import net.milos.testmod1.item.ModItems;
+import net.milos.testmod1.villager.ModVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,13 +28,17 @@ public class TestMod1 {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModVillagers.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        event.enqueueWork(() -> {
+            ModVillagers.registerPOIs();
+        });
     }
 
 

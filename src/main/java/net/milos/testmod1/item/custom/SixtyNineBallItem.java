@@ -8,7 +8,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -41,7 +40,7 @@ public class SixtyNineBallItem extends Item {
         } else {
             components.add(Component.literal("Press SHIFT for mor info")
                     .withStyle(ChatFormatting.STRIKETHROUGH).withStyle(ChatFormatting.DARK_GREEN));
-        };
+        }
         super.appendHoverText(stack, level, components, flag);
     }
 
@@ -54,6 +53,8 @@ public class SixtyNineBallItem extends Item {
         }
         else {
             player.sendSystemMessage(Component.literal("Your number is "+ randomnumber));
+            player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 10, 10));
+
         }
     }
 

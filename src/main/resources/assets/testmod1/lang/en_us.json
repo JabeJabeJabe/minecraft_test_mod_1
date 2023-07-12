@@ -13,5 +13,7 @@
   "block.testmod1.gummoberry_crop": "Gummoberry Crop",
 
 
-  "itemGroup.testmod1tab": "Test Mod 1"
+  "itemGroup.testmod1tab": "Test Mod 1",
+
+  "entity.minecraft.villager.testmod1.jumpy_master": "Jumpy Master"
 }
