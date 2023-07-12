@@ -54,7 +54,6 @@ public class TestMod1 {
     public static class ClientModEvents    {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)        {
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.GUMMOBERRY_CROP.get(), RenderType.cutout());
 
         }
     }
