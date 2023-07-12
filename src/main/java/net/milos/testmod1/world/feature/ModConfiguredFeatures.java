@@ -22,8 +22,9 @@ public class ModConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, TestMod1.MOD_ID);
 
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_GUMMO_ORES = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.GUMMO_ORE.get().defaultBlockState()),
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> STONE_GUMMO_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.GUMMO_ORE.get().defaultBlockState())));
+     public static final Supplier<List<OreConfiguration.TargetBlockState>> DEEPSLATE_GUMMO_ORES = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_GUMMO_ORE.get().defaultBlockState())));
     public static final Supplier<List<OreConfiguration.TargetBlockState>> END_GUMMO_ORES = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE), ModBlocks.ENDSTONE_GUMMO_ORE.get().defaultBlockState())));
@@ -31,8 +32,10 @@ public class ModConfiguredFeatures {
             OreConfiguration.target(OreFeatures.NETHER_ORE_REPLACEABLES, ModBlocks.NETHERRACK_GUMMO_ORE.get().defaultBlockState())));
 
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> GUMMO_ORE = CONFIGURED_FEATURES.register("gummo_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_GUMMO_ORES.get(), 7))); //vein size
+    public static final RegistryObject<ConfiguredFeature<?, ?>> STONE_GUMMO_ORE = CONFIGURED_FEATURES.register("stone_gummo_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(STONE_GUMMO_ORES.get(), 7))); //vein size
+    public static final RegistryObject<ConfiguredFeature<?, ?>> DEEPSLATE_GUMMO_ORE = CONFIGURED_FEATURES.register("deepslate_gummo_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(DEEPSLATE_GUMMO_ORES.get(), 7))); //vein size
     public static final RegistryObject<ConfiguredFeature<?, ?>> END_GUMMO_ORE = CONFIGURED_FEATURES.register("end_gummo_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(END_GUMMO_ORES.get(), 9)));
     public static final RegistryObject<ConfiguredFeature<?, ?>> NETHER_GUMMO_ORE = CONFIGURED_FEATURES.register("nether_gummo_ore",

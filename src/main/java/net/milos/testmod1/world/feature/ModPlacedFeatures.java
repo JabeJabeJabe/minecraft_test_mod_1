@@ -17,16 +17,19 @@ public class ModPlacedFeatures {
 
 
 
-    public static final RegistryObject<PlacedFeature> GUMMO_ORE_PLACED = PLACED_FEATURES.register("gummo_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.GUMMO_ORE.getHolder().get(), commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+    public static final RegistryObject<PlacedFeature> STONE_GUMMO_ORE_PLACED = PLACED_FEATURES.register("stone_gummo_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.STONE_GUMMO_ORE.getHolder().get(), commonOrePlacement(37, // VeinsPerChunk
+                    HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80)))));
+    public static final RegistryObject<PlacedFeature> DEEPSLATE_GUMMO_ORE_PLACED = PLACED_FEATURES.register("deepslate_gummo_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.DEEPSLATE_GUMMO_ORE.getHolder().get(), commonOrePlacement(37, // VeinsPerChunk
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
     public static final RegistryObject<PlacedFeature> END_GUMMO_ORE_PLACED = PLACED_FEATURES.register("end_gummo_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.END_GUMMO_ORE.getHolder().get(), commonOrePlacement(7, // VeinsPerChunk
+            () -> new PlacedFeature(ModConfiguredFeatures.END_GUMMO_ORE.getHolder().get(), commonOrePlacement(37, // VeinsPerChunk
                     HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
     public static final RegistryObject<PlacedFeature> NETHER_GUMMO_ORE_PLACED = PLACED_FEATURES.register("nether_gummo_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.NETHER_GUMMO_ORE.getHolder().get(), commonOrePlacement(7, // VeinsPerChunk
+            () -> new PlacedFeature(ModConfiguredFeatures.NETHER_GUMMO_ORE.getHolder().get(), commonOrePlacement(37, // VeinsPerChunk
                     HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
 
