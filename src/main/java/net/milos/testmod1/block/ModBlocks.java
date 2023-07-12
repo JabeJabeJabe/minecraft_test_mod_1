@@ -39,6 +39,15 @@ public class ModBlocks {
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModeTab.TESTMOD1_TAB);
 
+    public static final RegistryObject<Block> ENDSTONE_GUMMO_ORE = registerBlock("endstone_gummo_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.TESTMOD1_TAB);
+    public static final RegistryObject<Block> NETHERRACK_GUMMO_ORE = registerBlock("netherrack_gummo_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.TESTMOD1_TAB);
+
 
     public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
             () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.DIRT)

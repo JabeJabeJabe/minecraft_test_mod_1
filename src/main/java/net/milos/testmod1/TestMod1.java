@@ -5,6 +5,8 @@ import net.milos.testmod1.block.ModBlocks;
 import net.milos.testmod1.item.ModItems;
 import net.milos.testmod1.painting.ModPaintings;
 import net.milos.testmod1.villager.ModVillagers;
+import net.milos.testmod1.world.feature.ModConfiguredFeatures;
+import net.milos.testmod1.world.feature.ModPlacedFeatures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -31,6 +33,9 @@ public class TestMod1 {
 
         ModVillagers.register(modEventBus);
         ModPaintings.register(modEventBus);
+
+        ModConfiguredFeatures.register(modEventBus); //ore gen 1/2
+        ModPlacedFeatures.register(modEventBus); //ore gen 2/2
 
         modEventBus.addListener(this::commonSetup);
 

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": "testmod1:nether_gummo_ore_placed",
+  "step": "underground_ores"
+}
