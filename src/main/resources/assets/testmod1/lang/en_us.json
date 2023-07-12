@@ -17,5 +17,8 @@
 
   "itemGroup.testmod1tab": "Test Mod 1",
 
-  "entity.minecraft.villager.testmod1.jumpy_master": "Jumpy Master"
+  "entity.minecraft.villager.testmod1.jumpy_master": "Jumpy Master",
+
+  "key.category.testmod1.test": "TestMod1",
+  "key.testmod1.drink_water": "Drink Water"
 }
