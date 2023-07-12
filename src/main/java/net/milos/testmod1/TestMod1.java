@@ -3,6 +3,7 @@ package net.milos.testmod1;
 import com.mojang.logging.LogUtils;
 import net.milos.testmod1.block.ModBlocks;
 import net.milos.testmod1.item.ModItems;
+import net.milos.testmod1.networking.ModMessages;
 import net.milos.testmod1.painting.ModPaintings;
 import net.milos.testmod1.villager.ModVillagers;
 import net.milos.testmod1.world.feature.ModConfiguredFeatures;
@@ -44,6 +45,7 @@ public class TestMod1 {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            ModMessages.register();
             ModVillagers.registerPOIs();
         });
     }

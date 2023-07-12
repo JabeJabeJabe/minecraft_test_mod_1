@@ -26,7 +26,7 @@ public class ModPlacedFeatures {
 
     public static final RegistryObject<PlacedFeature> END_GUMMO_ORE_PLACED = PLACED_FEATURES.register("end_gummo_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.END_GUMMO_ORE.getHolder().get(), commonOrePlacement(37, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.absolute(1), VerticalAnchor.absolute(15)))));
+                    HeightRangePlacement.uniform(VerticalAnchor.absolute(1), VerticalAnchor.absolute(20)))));
 
     public static final RegistryObject<PlacedFeature> NETHER_GUMMO_ORE_PLACED = PLACED_FEATURES.register("nether_gummo_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.NETHER_GUMMO_ORE.getHolder().get(), commonOrePlacement(37, // VeinsPerChunk

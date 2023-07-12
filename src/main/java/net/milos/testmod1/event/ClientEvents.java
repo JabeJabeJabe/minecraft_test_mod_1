@@ -1,6 +1,9 @@
 package net.milos.testmod1.event;
 
 import net.milos.testmod1.TestMod1;
+import net.milos.testmod1.networking.ModMessages;
+import net.milos.testmod1.networking.packet.DrinkWaterC2SPacket;
+import net.milos.testmod1.networking.packet.ExampleC2SPacket;
 import net.milos.testmod1.util.KeyBinding;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -16,7 +19,9 @@ public class ClientEvents {
         @SubscribeEvent
         public static void onKeyInput(InputEvent.Key event){
             if(KeyBinding.DRINKING_KEY.consumeClick()){
-                Minecraft.getInstance().player.sendSystemMessage(Component.literal("pressed key xdxd!"));
+                //Minecraft.getInstance().player.sendSystemMessage(Component.literal("pressed key xdxd!"));
+                //ModMessages.sendToServer(new ExampleC2SPacket());
+                ModMessages.sendToServer(new DrinkWaterC2SPacket());
             }
         }
     }
