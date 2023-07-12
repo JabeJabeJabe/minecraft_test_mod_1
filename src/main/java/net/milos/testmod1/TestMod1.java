@@ -3,6 +3,7 @@ package net.milos.testmod1;
 import com.mojang.logging.LogUtils;
 import net.milos.testmod1.block.ModBlocks;
 import net.milos.testmod1.item.ModItems;
+import net.milos.testmod1.painting.ModPaintings;
 import net.milos.testmod1.villager.ModVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -29,6 +30,7 @@ public class TestMod1 {
         ModBlocks.register(modEventBus);
 
         ModVillagers.register(modEventBus);
+        ModPaintings.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
