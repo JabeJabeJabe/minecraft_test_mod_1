@@ -87,7 +87,8 @@ public class ModEvents {
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) { //ovo je malo sranje nacin, zato kaze da je nedovrseno
         if(event.side == LogicalSide.SERVER) {
             event.player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(thirst -> {
-                if(thirst.getThirst() > 0 && event.player.getRandom().nextFloat() < 0.005f) { // Once Every 10 Seconds on Avg
+                if(thirst.getThirst() > 0 && event.player.getRandom().nextFloat() < 0.005f // Once Every 10 Seconds on Avg
+                        && !event.player.isCreative()) {
                     thirst.subThirst(1);
                     ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()), (ServerPlayer) event.player);
                     //event.player.sendSystemMessage(Component.literal("Subtracted Thirst"));

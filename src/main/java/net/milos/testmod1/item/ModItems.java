@@ -25,14 +25,14 @@ public class ModItems {
     public static final RegistryObject<Item> SIXTY_NINE_BALL = ITEMS.register("sixty_nine_ball",
             () -> new SixtyNineBallItem(new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB).stacksTo(1)));
 
-public static final RegistryObject<Item> GUMMOBERRY_SEEDS = ITEMS.register("gummoberry_seeds",
+    public static final RegistryObject<Item> GUMMOBERRY_SEEDS = ITEMS.register("gummoberry_seeds",
             () -> new ItemNameBlockItem(ModBlocks.GUMMOBERRY_CROP.get(),
                     new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB)));
-public static final RegistryObject<Item> GUMMOBERRY = ITEMS.register("gummoberry",
+    public static final RegistryObject<Item> GUMMOBERRY = ITEMS.register("gummoberry",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB)
                     .food(new FoodProperties.Builder().nutrition(3).saturationMod(3f).build())));
 
-public static final RegistryObject<Item> SOAP_WATER_BUCKET = ITEMS.register("soap_water_bucket",
+    public static final RegistryObject<Item> SOAP_WATER_BUCKET = ITEMS.register("soap_water_bucket",
             () -> new BucketItem(ModFluids.SOURCE_SOAP_WATER,
                     new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB).stacksTo(1).craftRemainder(Items.BUCKET)));
 

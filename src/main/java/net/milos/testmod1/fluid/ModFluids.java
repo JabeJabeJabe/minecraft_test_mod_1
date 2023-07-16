@@ -22,7 +22,8 @@ public class ModFluids {
 
     public static final ForgeFlowingFluid.Properties SOAP_WATER_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
             ModFluidTypes.SOAP_WATER_FLUID_TYPE, SOURCE_SOAP_WATER, FLOWING_SOAP_WATER)
-            .slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.SOAP_WATER_BLOCK).bucket(ModItems.SOAP_WATER_BUCKET);
+            .slopeFindDistance(2).levelDecreasePerBlock(1).block(ModBlocks.SOAP_WATER_BLOCK).bucket(ModItems.SOAP_WATER_BUCKET)
+            .tickRate(5);
 
     public static void register(IEventBus eventBus) {
         FLUIDS.register(eventBus);
