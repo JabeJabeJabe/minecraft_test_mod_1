@@ -2,6 +2,8 @@ package net.milos.testmod1;
 
 import com.mojang.logging.LogUtils;
 import net.milos.testmod1.block.ModBlocks;
+import net.milos.testmod1.fluid.ModFluidTypes;
+import net.milos.testmod1.fluid.ModFluids;
 import net.milos.testmod1.item.ModItems;
 import net.milos.testmod1.networking.ModMessages;
 import net.milos.testmod1.painting.ModPaintings;
@@ -38,6 +40,9 @@ public class TestMod1 {
         ModConfiguredFeatures.register(modEventBus); //ore gen 1/2
         ModPlacedFeatures.register(modEventBus); //ore gen 2/2
 
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -55,7 +60,9 @@ public class TestMod1 {
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents    {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
 
         }
     }

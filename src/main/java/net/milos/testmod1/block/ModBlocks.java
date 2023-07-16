@@ -4,6 +4,7 @@ import net.milos.testmod1.TestMod1;
 import net.milos.testmod1.block.custom.GummoBerryCropBlock;
 import net.milos.testmod1.block.custom.GummoLampBlock;
 import net.milos.testmod1.block.custom.JumpyBlock;
+import net.milos.testmod1.fluid.ModFluids;
 import net.milos.testmod1.item.ModCreativeModeTab;
 import net.milos.testmod1.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -61,6 +63,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> GUMMOBERRY_CROP = BLOCKS.register("gummoberry_crop",
             () -> new GummoBerryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
+    public static final RegistryObject<LiquidBlock> SOAP_WATER_BLOCK = BLOCKS.register("soap_water_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 
 

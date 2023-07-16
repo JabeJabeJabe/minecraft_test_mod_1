@@ -2,11 +2,10 @@ package net.milos.testmod1.item;
 
 import net.milos.testmod1.TestMod1;
 import net.milos.testmod1.block.ModBlocks;
+import net.milos.testmod1.fluid.ModFluids;
 import net.milos.testmod1.item.custom.SixtyNineBallItem;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,6 +31,10 @@ public static final RegistryObject<Item> GUMMOBERRY_SEEDS = ITEMS.register("gumm
 public static final RegistryObject<Item> GUMMOBERRY = ITEMS.register("gummoberry",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB)
                     .food(new FoodProperties.Builder().nutrition(3).saturationMod(3f).build())));
+
+public static final RegistryObject<Item> SOAP_WATER_BUCKET = ITEMS.register("soap_water_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_SOAP_WATER,
+                    new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB).stacksTo(1).craftRemainder(Items.BUCKET)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
