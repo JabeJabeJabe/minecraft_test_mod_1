@@ -36,6 +36,11 @@ public class ModItems {
             () -> new BucketItem(ModFluids.SOURCE_SOAP_WATER,
                     new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB).stacksTo(1).craftRemainder(Items.BUCKET)));
 
+
+    public static final RegistryObject<Item> GUMMO_SWORD = ITEMS.register("gummo_sword",
+            () -> new SwordItem(Tiers.DIAMOND, 6, -2.4f, //prvo att damage, drugo att speed. na oba dodaj 4
+                    new Item.Properties().tab(ModCreativeModeTab.TESTMOD1_TAB).stacksTo(1)));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }
