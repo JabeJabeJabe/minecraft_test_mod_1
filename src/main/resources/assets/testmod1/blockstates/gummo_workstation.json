@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "testmod1:block/gummo_workstation",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "testmod1:block/gummo_workstation"
+    },
+    "facing=west": {
+      "model": "testmod1:block/gummo_workstation",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "testmod1:block/gummo_workstation",
+      "y": 270
+    }
+  }
+}

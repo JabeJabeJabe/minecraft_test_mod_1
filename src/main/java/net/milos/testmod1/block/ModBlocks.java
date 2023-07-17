@@ -3,6 +3,7 @@ package net.milos.testmod1.block;
 import net.milos.testmod1.TestMod1;
 import net.milos.testmod1.block.custom.GummoBerryCropBlock;
 import net.milos.testmod1.block.custom.GummoLampBlock;
+import net.milos.testmod1.block.custom.GummoWorkstationBlock;
 import net.milos.testmod1.block.custom.JumpyBlock;
 import net.milos.testmod1.fluid.ModFluids;
 import net.milos.testmod1.item.ModCreativeModeTab;
@@ -66,6 +67,9 @@ public class ModBlocks {
     public static final RegistryObject<LiquidBlock> SOAP_WATER_BLOCK = BLOCKS.register("soap_water_block",
             () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
+    public static final RegistryObject<Block> GUMMO_WORKSTATION = registerBlock("gummo_workstation",
+            () -> new GummoWorkstationBlock(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(6f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.TESTMOD1_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
