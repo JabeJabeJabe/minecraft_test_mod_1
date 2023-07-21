@@ -1,0 +1,11 @@
+{
+  "type": "testmod1:gummo_workstation",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "output": {
+    "item": "minecraft:diamond"
+  }
+}

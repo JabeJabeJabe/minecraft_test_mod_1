@@ -1,0 +1,11 @@
+{
+  "type": "testmod1:gummo_workstation",
+  "ingredients": [
+    {
+      "item": "testmod1:raw_gummo"
+    }
+  ],
+  "output": {
+    "item": "testmod1:gummo"
+  }
+}

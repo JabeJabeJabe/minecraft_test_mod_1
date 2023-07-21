@@ -8,6 +8,7 @@ import net.milos.testmod1.fluid.ModFluids;
 import net.milos.testmod1.item.ModItems;
 import net.milos.testmod1.networking.ModMessages;
 import net.milos.testmod1.painting.ModPaintings;
+import net.milos.testmod1.recipe.ModRecipes;
 import net.milos.testmod1.screen.GummoWorkstationScreen;
 import net.milos.testmod1.screen.ModMenuTypes;
 import net.milos.testmod1.villager.ModVillagers;
@@ -49,6 +50,8 @@ public class TestMod1 {
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

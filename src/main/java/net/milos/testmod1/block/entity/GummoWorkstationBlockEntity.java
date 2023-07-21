@@ -1,6 +1,7 @@
 package net.milos.testmod1.block.entity;
 
 import net.milos.testmod1.item.ModItems;
+import net.milos.testmod1.recipe.GummoWorkstationRecipe;
 import net.milos.testmod1.screen.GummoWorkstationMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -26,6 +27,8 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class GummoWorkstationBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(3){
@@ -147,27 +150,40 @@ public class GummoWorkstationBlockEntity extends BlockEntity implements MenuProv
         this.progress=0;
     }
 
-    private static void craftItem(GummoWorkstationBlockEntity pEntity) {
-        if (hasRecipe(pEntity)){
-            pEntity.itemHandler.extractItem(1, 1, false);
-            pEntity.itemHandler.setStackInSlot(2, new ItemStack(ModItems.GUMMO.get(),
-                    pEntity.itemHandler.getStackInSlot(2).getCount() + 1));
-
-            pEntity.resetProgress();
-        }
-
-    }
-
-    private static boolean hasRecipe(GummoWorkstationBlockEntity entity) {
+    private static void craftItem(GummoWorkstationBlockEntity entity) {
+        Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
-        boolean hasRawGemInFirstSlot = entity.itemHandler.getStackInSlot(1).getItem() == ModItems.RAW_GUMMO.get();
+        Optional<GummoWorkstationRecipe> recipe = level.getRecipeManager()
+                .getRecipeFor(GummoWorkstationRecipe.Type.INSTANCE, inventory, level);
 
-        return hasRawGemInFirstSlot && canInsertAmountIntoOutputSlot(inventory) &&
-                canInsertItemIntoOutputSlot(inventory, new ItemStack(ModItems.GUMMO.get(), 1));
+
+        if (hasRecipe(entity)){
+            entity.itemHandler.extractItem(1, 1, false);
+            entity.itemHandler.setStackInSlot(2, new ItemStack(recipe.get().getResultItem().getItem(), //count outputa bi bio ignorisan
+                    entity.itemHandler.getStackInSlot(2).getCount() + 1));
+
+            entity.resetProgress();
+        }
+
+    }
+
+    private static boolean hasRecipe(GummoWorkstationBlockEntity entity) {
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<GummoWorkstationRecipe> recipe = level.getRecipeManager()
+                .getRecipeFor(GummoWorkstationRecipe.Type.INSTANCE, inventory, level);
+
+
+        return recipe.isPresent() && canInsertAmountIntoOutputSlot(inventory) &&
+                canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem());
 
     }
 
