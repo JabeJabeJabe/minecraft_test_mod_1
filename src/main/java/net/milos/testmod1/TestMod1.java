@@ -2,14 +2,18 @@ package net.milos.testmod1;
 
 import com.mojang.logging.LogUtils;
 import net.milos.testmod1.block.ModBlocks;
+import net.milos.testmod1.block.entity.ModBlockEntities;
 import net.milos.testmod1.fluid.ModFluidTypes;
 import net.milos.testmod1.fluid.ModFluids;
 import net.milos.testmod1.item.ModItems;
 import net.milos.testmod1.networking.ModMessages;
 import net.milos.testmod1.painting.ModPaintings;
+import net.milos.testmod1.screen.GummoWorkstationScreen;
+import net.milos.testmod1.screen.ModMenuTypes;
 import net.milos.testmod1.villager.ModVillagers;
 import net.milos.testmod1.world.feature.ModConfiguredFeatures;
 import net.milos.testmod1.world.feature.ModPlacedFeatures;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -43,6 +47,9 @@ public class TestMod1 {
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
 
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -64,6 +71,7 @@ public class TestMod1 {
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
 
+            MenuScreens.register(ModMenuTypes.GUMMO_WORKSTATION_MENU.get(), GummoWorkstationScreen::new);
         }
     }
 }
